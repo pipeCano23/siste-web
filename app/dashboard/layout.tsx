@@ -10,11 +10,11 @@ export default function ProductLayout({
   children: React.ReactNode;
 }>) {
   const [hovered, setHovered] = useState(false);
-  const [fileUrl, setFileUrl] = useState("excel.xlsx");
+  const [fileUrl, setFileUrl] = useState("predicciones_inventario.csv");
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = BUCKET + fileUrl;
-    link.download = "inventario.xlsx";
+    link.download = "inventario.csv";
     link.click();
   };
   return (
