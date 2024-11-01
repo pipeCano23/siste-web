@@ -19,6 +19,7 @@ export default function ProductsList() {
     setLoading(true);
     const customerEmail = localStorage.getItem("email");
     const customerName = localStorage.getItem("nombre");
+    const city = localStorage.getItem("ciudad");
     fetch(`${API}orders`, {
       method: "POST",
       headers: {
@@ -30,7 +31,7 @@ export default function ProductsList() {
         customer_email: customerEmail,
         quantity: 1,
         order_date: formatDate(new Date()),
-        destination_city: "New York",
+        destination_city: city,
       }),
     })
       .then((response) => {
